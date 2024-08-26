@@ -1,66 +1,32 @@
-## Foundry
+# On-Chain Randomness (Not really)
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This repo is created by following the `Generating random numbers on-chain` lesson on LearnWeb3 (https://learnweb3.io/degrees/ethereum-developer-degree/senior/generating-random-numbers-on-chain/)
 
-Foundry consists of:
+## Introduction
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Randomness is a hard problem. Computers run code that is written by programmers and follows a given sequence of steps. As such, it is extremely hard to design an algorithm that will give you a 'random' number since that number must come from an algorithm that follows a certain sequence of steps. 
 
-## Documentation
+This repo was created to test that generating randomness by using on-chain methods is not really random and the generated number can be easily guessed.
 
-https://book.getfoundry.sh/
+## Requirements
 
-## Usage
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+- [foundry](https://getfoundry.sh/)
+  - You'll know you did it right if you can run `forge --version` and you see a response like `forge 0.2.0 (816e00b 2023-03-16T00:05:26.396218Z)`
 
-### Build
+## Installation
 
-```shell
-$ forge build
+```bash
+git clone https://github.com/SajidSheikh87/LW3-on-chain-randomness
+cd LW3-on-chain-randomness
 ```
 
-### Test
+# Testing
 
-```shell
-$ forge test
-```
+## Vanilla Foundry
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+foundryup
+forge test
 ```
